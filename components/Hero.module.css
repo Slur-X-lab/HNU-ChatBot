@@ -1,0 +1,223 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding: 110px 32px 80px;
+}
+
+.inner {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-600);
+  border: 1px solid var(--grey-200);
+  padding: 5px 14px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.heading {
+  font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.headingLine {
+  display: block;
+  max-width: 25ch;
+  margin: 0 auto;
+}
+
+.headingLineCampus {
+  display: block;
+  font-size: 1.05em;
+  letter-spacing: -0.02em;
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: var(--grey-600);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+  line-height: 1.7;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.subBold {
+  font-weight: 700;
+}
+
+.chatPreview {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  padding: 6px 6px 6px 20px;
+  gap: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  max-width: 520px;
+  margin: 0 auto 20px;
+  animation: fadeUp 0.7s 0.3s ease both;
+  transition: box-shadow 0.3s;
+}
+
+.chatPreview:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+}
+
+.typingText {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--black);
+  text-align: left;
+  min-height: 1.4em;
+}
+
+.cursor {
+  color: var(--black);
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
+  margin-left: -4px;
+}
+
+.askBtn {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: 10px;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.askBtn:hover {
+  opacity: 0.85;
+  transform: translateX(2px);
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--grey-400);
+  animation: fadeUp 0.7s 0.45s ease both;
+}
+
+
+/* Dot grid background */
+.grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.floatingImages {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floatingImage {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.floatLeft {
+  animation-name: floatLeft;
+}
+
+.floatRight {
+  animation-name: floatRight;
+}
+
+@keyframes floatLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px) translateY(0) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(0) translateY(-8px) scale(1);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(-12px) translateY(8px) scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(-80px) translateY(16px) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes floatRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) translateY(0) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(0) translateY(-8px) scale(1);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(12px) translateY(8px) scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(80px) translateY(16px) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--grey-400);
+  justify-self: center;
+  align-self: center;
+}
