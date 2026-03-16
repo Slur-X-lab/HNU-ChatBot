@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './Hero.module.css'
 import pic1 from '../assets/pic-1.png'
 import pic2 from '../assets/pic-2.png'
@@ -11,6 +11,7 @@ import pic6 from '../assets/pic-6.png'
 import pic7 from '../assets/pic-7.png'
 import pic8 from '../assets/pic-8.png'
 import pic10 from '../assets/pic-10.png'
+import robot from '../assets/robot.png'
 
 const examples = [
   "Where is the Registrar's Office?",
@@ -22,6 +23,19 @@ const examples = [
 
 export default function Hero() {
   const typingRef = useRef<HTMLSpanElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isSmallMobile, setIsSmallMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+      setIsSmallMobile(window.innerWidth <= 480)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     let i = 0
@@ -81,6 +95,18 @@ export default function Hero() {
     { top: '72%', side: 'left', offset: '6%' },
   ]
 
+  const mobilePositions = [
+    { top: '8%', side: 'left', offset: '2%' },
+    { top: '15%', side: 'right', offset: '3%' },
+    { top: '25%', side: 'left', offset: '4%' },
+    { top: '35%', side: 'right', offset: '5%' },
+    { top: '45%', side: 'left', offset: '6%' },
+    { top: '55%', side: 'right', offset: '4%' },
+    { top: '65%', side: 'left', offset: '5%' },
+    { top: '75%', side: 'right', offset: '3%' },
+    { top: '85%', side: 'left', offset: '2%' },
+  ]
+
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
@@ -107,12 +133,23 @@ export default function Hero() {
         </div>
 
         <p className={styles.hint}>Get Started Now!</p>
+        
+        <div className={styles.robotContainer}>
+          <Image 
+            src={robot} 
+            alt="Robot assistant waving" 
+            width={350} 
+            height={350}
+            className={styles.robot}
+          />
+        </div>
       </div>
 
       <div className={styles.floatingImages} aria-hidden>
         {floatingImages.map((src, i) => {
-          const pos = positions[i] || positions[0]
+          const pos = isMobile ? mobilePositions[i] || mobilePositions[0] : positions[i] || positions[0]
           const floatClass = i % 2 === 0 ? styles.floatLeft : styles.floatRight
+          const imageSize = isSmallMobile ? 80 : isMobile ? 120 : 200
           return (
             <div
               key={i}
@@ -123,7 +160,12 @@ export default function Hero() {
                 animationDelay: `${i * 0.6}s`,
               }}
             >
-              <Image src={src} alt={`Floating ${i + 1}`} width={200} height={200} />
+              <Image 
+                src={src} 
+                alt={`Floating ${i + 1}`} 
+                width={imageSize} 
+                height={imageSize} 
+              />
             </div>
           )
         })}

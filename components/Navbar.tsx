@@ -38,7 +38,7 @@ export default function Navbar() {
         </ul>
 
         <button className={styles.cta} onClick={() => handleNav('how-it-works')}>
-          Try Now
+          Download
         </button>
 
         <button className={styles.burger} onClick={() => setMenuOpen(v => !v)} aria-label="Menu">
