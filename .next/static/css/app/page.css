@@ -470,20 +470,29 @@
   animation: Hero_fadeUp__gNdHk 0.7s 0.45s ease both;
 }
 
+.Hero_hint__8LcdC:hover {
+  cursor: pointer;
+}
+
+.Hero_inner__lGUYu:hover .Hero_cursor__CzhBO {
+  color: black;
+}
+
 .Hero_robotContainer__JkBNw {
-  margin-top: 40px;
+  margin-top: -10px;
   display: flex;
   justify-content: center;
   animation: Hero_fadeUp__gNdHk 0.7s 0.6s ease both;
 }
 
 .Hero_robot__TA_S1 {
-  max-width: min(350px, 40vw);
-  max-height: min(350px, 40vh);
+  max-width: min(400px, 52vw);
+  max-height: min(400px, 52vh);
   width: auto;
   height: auto;
-  animation: Hero_wave__cgyOg 2s ease-in-out infinite;
+  transform: rotate(0deg);
   transform-origin: bottom center;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
 
 
@@ -519,8 +528,7 @@
 /* Responsive floating images */
 @media (max-width: 768px) {
   .Hero_floatingImage__VgzW6 {
-    width: 120px;
-    height: 120px;
+    display: none;
   }
   
   .Hero_hero__bqvNd {
@@ -530,8 +538,7 @@
 
 @media (max-width: 480px) {
   .Hero_floatingImage__VgzW6 {
-    width: 80px;
-    height: 80px;
+    display: none;
   }
   
   .Hero_hero__bqvNd {
@@ -602,18 +609,6 @@
   }
   100% {
     opacity: 0;
-  }
-}
-
-@keyframes Hero_wave__cgyOg {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-15deg);
-  }
-  75% {
-    transform: rotate(15deg);
   }
 }
 

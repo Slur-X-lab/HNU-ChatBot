@@ -22,18 +22,18 @@ export default function HowItWorks() {
     <section id="how-it-works" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <span className={styles.label}>How It Works</span>
-          <h2 className={styles.title}>
+          <span className={`${styles.label} scroll-animate-left`}>How It Works</span>
+          <h2 className={`${styles.title} scroll-animate-left`}>
             Simple as asking<br />
             <span className={styles.serif}>a friend.</span>
           </h2>
-          <p className={styles.sub}>
+          <p className={`${styles.sub} scroll-animate-left`}>
             No forms, no waiting, no phone tag. HNU-ChatBot understands natural language and knows your campus inside and out.
           </p>
 
           <div className={styles.steps}>
             {steps.map((s, i) => (
-              <div key={i} className={styles.step}>
+              <div key={i} className={`${styles.step} scroll-animate-left`} style={{ transitionDelay: `${i * 0.15}s` }}>
                 <span className={styles.stepNum}>{s.num}</span>
                 <div>
                   <h3 className={styles.stepTitle}>{s.title}</h3>
@@ -45,7 +45,7 @@ export default function HowItWorks() {
         </div>
 
         <div className={styles.right}>
-          <div className={styles.chatWindow}>
+          <div className={`${styles.chatWindow} scroll-animate-right`}>
             <div className={styles.chatHeader}>
               <span className={styles.dot} style={{ background: '#ff5f57' }} />
               <span className={styles.dot} style={{ background: '#febc2e' }} />

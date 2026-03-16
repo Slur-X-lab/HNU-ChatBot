@@ -44,19 +44,19 @@ export default function Features() {
     <section id="features" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <span className={styles.label}>Features</span>
-          <h2 className={styles.title}>
+          <span className={`${styles.label} scroll-animate`}>Features</span>
+          <h2 className={`${styles.title} scroll-animate`}>
             Everything campus,<br />
             <span className={styles.serif}>in one place.</span>
           </h2>
-          <p className={styles.sub}>
+          <p className={`${styles.sub} scroll-animate`}>
             Built specifically for university life — CampusAI covers every question a student might have, from day one to graduation.
           </p>
         </div>
 
         <div className={styles.grid}>
           {features.map((f, i) => (
-            <div key={i} className={styles.card}>
+            <div key={i} className={`${styles.card} scroll-animate`} style={{ transitionDelay: `${i * 0.1}s` }}>
               <span className={styles.icon}>{f.icon}</span>
               <h3 className={styles.cardTitle}>{f.title}</h3>
               <p className={styles.cardDesc}>{f.desc}</p>

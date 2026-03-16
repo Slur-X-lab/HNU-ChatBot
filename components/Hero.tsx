@@ -138,8 +138,8 @@ export default function Hero() {
           <Image 
             src={robot} 
             alt="Robot assistant waving" 
-            width={350} 
-            height={350}
+            width={480} 
+            height={480}
             className={styles.robot}
           />
         </div>
