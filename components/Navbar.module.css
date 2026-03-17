@@ -80,6 +80,32 @@
   background: var(--grey-100);
 }
 
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.chatButton {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 99px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.chatButton:hover {
+  background: var(--black);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
 .cta {
   background: var(--black);
   color: var(--white);
@@ -178,7 +204,26 @@
 
 .mobileCta:hover { opacity: 0.85; }
 
+.mobileChatButton {
+  margin-top: 12px;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 99px;
+  transition: all 0.2s;
+}
+
+.mobileChatButton:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
 @media (max-width: 700px) {
-  .links, .cta { display: none; }
+  .links, .cta, .buttonGroup { display: none; }
   .burger { display: flex; }
 }
