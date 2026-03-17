@@ -39,7 +39,7 @@ export default function Chat() {
         <div className={styles.chatContent}>
           <div className={styles.headerSection}>
             <h1 className={styles.greeting}>
-              {getCurrentGreeting()}, Joshua
+              {getCurrentGreeting()}, Student
             </h1>
           </div>
 
