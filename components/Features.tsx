@@ -4,7 +4,7 @@ const features = [
   {
     icon: '⊕',
     title: 'Campus Navigation',
-    desc: 'Find any office, building, or facility on campus instantly. CampusAI knows every corner — from the Registrar to the Dean\'s office.',
+    desc: 'Find any office, building, or facility on campus instantly. HNU-ChatBot knows every corner — from the Registrar to the Dean\'s office.',
     tags: ['Registrar', 'Library', 'Cafeteria', 'Clinic'],
   },
   {
@@ -28,13 +28,13 @@ const features = [
   {
     icon: '◇',
     title: 'Student Services',
-    desc: 'Scholarship applications, counseling appointments, ID renewal, and more — CampusAI guides you through every student service available.',
+    desc: 'Scholarship applications, counseling appointments, ID renewal, and more — HNU-ChatBot guides you through every student service available.',
     tags: ['Scholarships', 'Counseling', 'Student ID', 'OSA'],
   },
   {
     icon: '●',
     title: '24 / 7 Availability',
-    desc: 'Unlike offices, CampusAI never closes. Get answers at midnight before your exam, or early morning before the admin offices open.',
+    desc: 'Unlike offices, HNU-ChatBot never closes. Get answers at midnight before your exam, or early morning before the admin offices open.',
     tags: ['Always On', 'Instant', 'No Queue', 'Real-time'],
   },
 ]
@@ -50,7 +50,7 @@ export default function Features() {
             <span className={styles.serif}>in one place.</span>
           </h2>
           <p className={`${styles.sub} scroll-animate`}>
-            Built specifically for university life — CampusAI covers every question a student might have, from day one to graduation.
+            Built specifically for university life — HNU-ChatBot covers every question a student might have, from day one to graduation.
           </p>
         </div>
 

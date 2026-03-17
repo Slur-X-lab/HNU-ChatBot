@@ -508,39 +508,24 @@
   opacity: 0.35;
 }
 
-.Hero_floatingImages__TOiKL {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
+
+.Hero_dot__puHJ9 {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--grey-400);
+  justify-self: center;
+  align-self: center;
 }
 
-.Hero_floatingImage__VgzW6 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  opacity: 0;
-  animation-duration: 8s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
-/* Responsive floating images */
+/* Responsive design */
 @media (max-width: 768px) {
-  .Hero_floatingImage__VgzW6 {
-    display: none;
-  }
-  
   .Hero_hero__bqvNd {
     padding: 90px 20px 60px;
   }
 }
 
 @media (max-width: 480px) {
-  .Hero_floatingImage__VgzW6 {
-    display: none;
-  }
-  
   .Hero_hero__bqvNd {
     padding: 70px 16px 50px;
   }
@@ -558,67 +543,6 @@
   .Hero_typingText__9S2gT {
     text-align: center;
   }
-}
-
-.Hero_floatLeft__BrP_s {
-  animation-name: Hero_floatLeft__BrP_s;
-}
-
-.Hero_floatRight__i9v9F {
-  animation-name: Hero_floatRight__i9v9F;
-}
-
-@keyframes Hero_floatLeft__BrP_s {
-  0% {
-    opacity: 0;
-    transform: translateX(-60px) translateY(0) scale(0.8);
-  }
-  15% {
-    opacity: 1;
-    transform: translateX(0) translateY(-8px) scale(1);
-  }
-  55% {
-    opacity: 1;
-    transform: translateX(-12px) translateY(8px) scale(1);
-  }
-  80% {
-    opacity: 0;
-    transform: translateX(-80px) translateY(16px) scale(0.9);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes Hero_floatRight__i9v9F {
-  0% {
-    opacity: 0;
-    transform: translateX(60px) translateY(0) scale(0.8);
-  }
-  15% {
-    opacity: 1;
-    transform: translateX(0) translateY(-8px) scale(1);
-  }
-  55% {
-    opacity: 1;
-    transform: translateX(12px) translateY(8px) scale(1);
-  }
-  80% {
-    opacity: 0;
-    transform: translateX(80px) translateY(16px) scale(0.9);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.Hero_dot__puHJ9 {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--grey-400);
-  justify-self: center;
-  align-self: center;
 }
 
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
